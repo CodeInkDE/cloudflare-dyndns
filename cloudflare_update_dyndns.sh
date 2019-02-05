@@ -11,6 +11,8 @@ ip=$(curl -s http://ipv4.icanhazip.com)
 ip_file="ip.txt"
 id_file="cloudflare.ids"
 log_file="cloudflare.log"
+#IP die Ignoriert wird
+ignore_ip="192.168.76.10"
 
 
 
@@ -20,6 +22,12 @@ log() {
         echo -e "[$(date)] - $1" >> $log_file
     fi
 }
+
+if [ $ip == $ignore_ip ]; then
+    echo "ignore_ip"
+    exit 0
+fi
+
 
 # SCRIPT START
 log "Check Initiated"
