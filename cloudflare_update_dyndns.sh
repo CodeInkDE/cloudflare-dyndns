@@ -7,7 +7,7 @@ zone_name="*******************"
 record_name="home.dings.de"
 record_identifier="*****************"
 # MAYBE CHANGE THESE
-ip=$(curl -s http://ipv4.icanhazip.com)
+ip=$(curl -s -4 http://myip.codeink.de)
 ip_file="ip.txt"
 id_file="cloudflare.ids"
 log_file="cloudflare.log"
